@@ -16,8 +16,8 @@ sudo docker start postgres-demo
 #    psql> create database conference_app;
 
 
-sudo docker cp create_tables.sql postgres-demo:/create_tables.sql
+sudo docker cp ./database/postgresql/create_tables.sql postgres-demo:/create_tables.sql
 sudo docker exec -it postgres-demo psql -d conference_app -f create_tables.sql -U postgres
 
-sudo docker cp insert_data.sql postgres-demo:/insert_data.sql
+sudo docker cp ./database/postgresql/insert_data.sql postgres-demo:/insert_data.sql
 sudo docker exec -it postgres-demo psql -d conference_app -f insert_data.sql -U postgres
